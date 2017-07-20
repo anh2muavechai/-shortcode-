@@ -1,0 +1,20 @@
+Bước 1:
+
+Backup cấu trúc table trước bằng cách vào phpMyAdmin chọn table rồi chọn tab export. Bỏ check cái phần data đi. Để nó chỉ backup cấu trúc table. (rất nhẹ nhàng)
+
+Bước 2:
+
+Backup từng đoạn data. Ví dụ bạn có 300k record thì chia ra muốn lần chỉ export 50k là ok.
+
+Cũng y hệt bước 1 chọn tab export nhưng bỏ check phần struct đi (phần này chỉ định để lấy cấu trúc của table - nhưng ta đã lấy ở bước 1 rồi).
+
+Phần data bạn để ý có phần
+
+Dump abc row(s) starting at record xyz
+
+với abc là số record muốn export và xyz là vị trí bắt đầu đầu muốn lấy.
+
+Lần 1: abc = 50000 và xyz = 0
+Lần 2: abc = 50000 và xyz = 50000 
+Lần 3: abc = 50000 và xyz = 100000
+.................................................. ..

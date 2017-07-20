@@ -1,0 +1,13 @@
+SELECT pc.cat_id,pcd.cat_name, b.count
+FROM product_category_desc as pcd 
+JOIN product_category as pc ON pcd.cat_id = pc.cat_id
+JOIN ( 
+  select apc.cat_id,count(ap.p_id) as count from products as ap
+  join products_desc as apd on apd.p_id = ap.p_id
+  join product_category as apc on ap.cat_id = apc.cat_id
+  where apd.lang = 'vn'
+  group by apc.cat_id
+) as b on b.cat_id = pcd.cat_id
+WHERE pcd.lang = 'vn'
+
+ORDER BY pc.cat_order
