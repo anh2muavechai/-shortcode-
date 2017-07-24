@@ -1,0 +1,175 @@
+Ve DB, trong sang nay Hung xem cac van de sau nhe
+Su dung postgressql
+1. Left Join, Inner Join, Cross Join
+2. Cac ham count, sum, max, min
+3. Group By
+4. Limit, offset
+5. Sub query
+6. Dat Alias cho column, table, sub query
+7. Union, union All
+8. Case when
+----------------------------------------------------------------------------------------
+2/
+a.count
+select count(id) as siso from hs where class = 'a1'
+b.sum
+select sum(siso) from class
+c.max
+select max(siso) from class
+c.min
+select min(siso) from class
+
+3/ Group By
+select class,count(class) as siso from hs group by class
+
+4/
+a. Limit
+select class,count(class) as siso from hs group by class limit 2
+b. Offset
+select class,count(class) as siso from hs group by class limit 2 offset 2
+
+8/
+select
+	class,
+	count(class) as siso,
+	sum(case when gender = 0 THEN 1 ELSE 0 END ) as nam,
+	sum(case when gender = 1 THEN 1 ELSE 0 END ) as nu
+from hs
+group by class
+
+7/
+a.Union noi cac ket qua cua cac query lai vs nhau,loai bo cac kq trung lap
+select * from hs UNION select * from hs order by name
+b. Union All lay tat ca cac kq
+
+1
+a.cross join
+select * from hs CROSS JOIN class
+b.inner
+select * from hs INNER JOIN class on class.id = hs.class
+c.left
+select hs.*,class.name from hs left JOIN class on class.id = hs.class
+
+
+---------------------------------------------------------------------
+//use count and where
+select
+	a.class,
+	count(class) as siso,
+	count( gender ) filter (where gender = 0) as nam,
+	count( gender ) filter (where gender = 1) as nu
+from hs as a
+group by a.class
+order by class
+
+//null
+select NULL + 10
+coalesce
+nullif
+Select coalesce(nullif('a', ''), '0', 'dsd')
+
+Table se su dung:
+	tr_case (1 record la 1 benh nhan)
+	ms_medicalinstitution (1 record la 1 benh vien)
+		tr_case.facilitiescode = ms_medicalinstitution.micode
+		tr_case.facilitiescode: Benh vien ma benh nhan dang nam dieu tri
+	
+	ms_secondaryhealthcarearea (1 record la 1 vùng địa lý)
+		ms_medicalinstitution.shcacode = ms_secondaryhealthcarearea.shcacode
+	
+Yeu cau:
+		1. Count so benh nhan trong 6 thang dau nam 2015, theo tung vùng địa lý
+		2. Tinh tuoi trung binh cua cac benh nhan trong 6 thang dau nam 2015, theo tung vùng địa lý
+
+		Dieu kien filter:
+			Ko tinh nhung benh vien co stopflg = 1
+
+		Ket qua se có cac column nhu sau:
+			shcacode, shcaname, count_benhnhan, avg_benhnhan
+
+tr_case.age
+
+select 
+	a.shcaname,
+	a.shcacode,
+	sum(d.total) as count_benhnhan
+from ms_secondaryhealthcarearea as a
+join ms_medicalinstitution as b on b.shcacode = a.shcacode
+join ( 
+	select count(facilitiescode) as total,facilitiescode 
+	from tr_case 
+	group by facilitiescode
+) d on d.facilitiescode = b.micode
+where b.stopflg != '1'
+group by a.shcacode
+order by a.shcacode
+
+2/
+select 
+	a.shcaname,
+	a.shcacode,
+	sum(d.total) as count_benhnhan,
+	cast(avg(d.tongtuoi) as numeric(10)) as avg_benhnhan
+from ms_secondaryhealthcarearea as a
+join ms_medicalinstitution as b on b.shcacode = a.shcacode
+join ( 
+	select 
+		count(facilitiescode) as total,
+		cast(avg(to_number(coalesce(nullif(age, ''), '0', age),'99G999D9S')) as numeric(10,0)) as tongtuoi,
+		facilitiescode 
+	from tr_case
+	where 
+		-- trong nam 2015 --
+		to_number(to_char(to_date(COALESCE(facilities_datetime, '19900101010101'), 'YYYYMMDDHH24MISS'), 'YYYY'),'9999') = 2015 and
+		-- 6 thang dau nam --
+		to_number(to_char(to_date(COALESCE(facilities_datetime, '19900101010101'), 'YYYYMMDDHH24MISS'), 'MM'),'99') < 7
+	group by facilitiescode
+) d on d.facilitiescode = b.micode
+where b.stopflg != '1'
+group by a.shcacode
+order by a.shcacode
+
+
+select 
+	a.shcaname,
+	a.shcacode,
+	sum(d.total) as count_benhnhan,
+	cast(avg(d.tongtuoi) as numeric(10)) as avg_benhnhan
+from ms_secondaryhealthcarearea as a
+join ms_medicalinstitution as b on b.shcacode = a.shcacode
+join ( 
+	select 
+		count(facilitiescode) as total,
+		cast(avg(to_number(coalesce(nullif(age, ''), '0', age),'99G999D9S')) as numeric(10,0)) as tongtuoi,
+		facilitiescode 
+	from tr_case
+	where 
+		-- trong nam 2015 --
+		to_number(SUBSTR(facilities_datetime,1,4),'9999') = 2015 and
+		-- 6 thang dau nam --
+		to_number(SUBSTR(facilities_datetime,5,2),'99') < 7
+	group by facilitiescode
+) d on d.facilitiescode = b.micode
+where coalesce(nullif(b.stopflg, ''), '0', b.stopflg) != '1'
+group by a.shcacode
+order by a.shcacode
+
+
+select 
+	se.shcaname,
+	se.shcacode,
+	count( ca.facilitiescode ) as count_benhnhan,
+	cast(avg(to_number(coalesce(nullif(ca.age, ''), '0', ca.age),'99'))as numeric(2,0)) as avg_benhnhan
+from ms_secondaryhealthcarearea as se
+left join ms_medicalinstitution as me on me.shcacode = se.shcacode
+left join tr_case as ca on
+	ca.facilitiescode = me.micode and
+	-- trong nam 2015 --
+	to_number(SUBSTR(ca.facilities_datetime,1,4),'9999') = 2015 and
+	-- 6 thang dau nam --
+	to_number(SUBSTR(ca.facilities_datetime,5,2),'99') < 7
+where
+	-- filter --
+	coalesce(nullif(me.stopflg, ''), '0', me.stopflg) != '1'
+group by se.shcacode
+order by se.shcacode;
