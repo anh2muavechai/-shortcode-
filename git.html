@@ -1,0 +1,23 @@
+- Setup git :
+	$ git config --global user.name "Thach Pham"
+	$ git config --global user.email "contact@thachpham.com"
+- View config : config --list
+- Cd to folder : cd part
+- Create Responsity : $ git init git_example
+- Add file to Git : git add readme.txt or git add * (all file)
+- View status : git status
+- Commit : 
+	git commit -m 'message'
+	git commit -a --allow-empty-message -m ""
+- Undo Commit :
+	$ git commit --amend -m "Hehe"
+- Clone github to local : git clone url namefolder
+- Push to github : git push origin master
+- View log : 
+	git log
+	git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" ------> git lg
+
+------------------------------------------------------------------
+- View branch : git branch
+- Create branch : git branch namebranch
+- Access to branch : git checkout namebranch
