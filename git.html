@@ -12,7 +12,10 @@
 - Undo Commit :
 	$ git commit --amend -m "Hehe"
 - Clone github to local : git clone url namefolder
-- Push to github : git push origin master
+- Push to github : 
+	git remote add <name> <url>
+	
+	git push origin master
 - View log : 
 	git log
 	git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" ------> git lg
