@@ -3,3 +3,10 @@ upload_max_filesize=1280M
 max_execution_time = 300 //increase time as per your server requirement.
 
 C:\wamp\bin\mysql\mysql5.5.24\bin\mysql.exe -u root -p db_name < C:\some_path\your_sql_file.sql
+mysql -u username -p database_name < file.sql
+
+mysqldump -u username -p –all-databases > dump.sql
+mysql -u username -p < dump.sql
+
+mysqldump -u root -p --opt --all-databases > alldb.sql
+mysqldump -u root -p --all-databases --skip-lock-tables > alldb.sql
