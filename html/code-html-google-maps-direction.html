@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Maps JavaScript API Example: Advanced Directions</title>
+    <!-- key=ABQIAAAAL6TjDEonPCoxZGuW9vuaXxQ1WNTghLATz996e5cua0Oz-niJOxTKe-tgSk2jBV2TxKqAv-IP8a4xzw /-->
+    
+
+<!-- Ad Muncher content start --><script type="text/javascript" src="http://interceptedby.admuncher.com/FCA3B8A911E158E7/helper.js#0.9818.0" id="xZWw_MainScript"></script><link rel="stylesheet" href="http://interceptedby.admuncher.com/FCA3B8A911E158E7/helper.css" type="text/css" media="all" /><!-- Ad Muncher content end -->
+
+<script src=" http://maps.google.com/?file=api&amp;v=2.x&amp;key=ABQIAAAAL6TjDEonPCoxZGuW9vuaXxREX_BY14WH84mgSTfXqOIQ0qJjSxRwq_7SonkWrXu__SbE8mDvWSfVSg"
+      type="text/javascript"></script>
+    <style type="text/css">
+      body {
+        font-family: Verdana, Arial, sans serif;
+        font-size: 11px;
+        margin: 2px;
+      }
+      table.directions{
+        border: solid 1pt #003399;
+      }
+      table.directions th {
+        background-color:#9ECFD8;
+      }
+      
+      img {
+        color: #000000;
+      }
+    </style>
+    <script type="text/javascript">
+ 
+    var map;
+    var gdir;
+    var geocoder = null;
+    var addressMarker;
+    var toggleState = 1;
+
+    //traffic
+    var trafficInfo = new GTrafficOverlay();
+
+    function initialize() {
+      if (GBrowserIsCompatible()) {      
+    map = new GMap2(document.getElementById("map_canvas"));
+    map.addControl(new GSmallMapControl());
+    map.addControl(new GMapTypeControl());
+    map.addOverlay(trafficInfo);
+        gdir = new GDirections(map, document.getElementById("directions"));
+        GEvent.addListener(gdir, "load", onGDirectionsLoad);
+        GEvent.addListener(gdir, "error", handleErrors);
+
+        setDirections("World Way Los Angeles, Ca 90045", "Downtown Los Angeles", "en_US");
+      }
+    }
+
+    function toggleTraffic() {
+      if (toggleState == 1) {
+        map.removeOverlay(trafficInfo);
+        toggleState = 0;
+      } else {
+        map.addOverlay(trafficInfo);
+        toggleState = 1;
+      }
+    }
+    
+    
+    function setDirections(fromAddress, toAddress, locale) {
+      toAddress.replace("1 ", "");  
+      gdir.load("from: " + fromAddress + " to: " + toAddress,
+                { "locale": locale });
+    }
+
+    function handleErrors(){
+       if (gdir.getStatus().code == G_GEO_UNKNOWN_ADDRESS)
+         alert("No corresponding geographic location could be found for one of the specified addresses. This may be due to the fact that the address is relatively new, or it may be incorrect.\nError code: " + gdir.getStatus().code);
+       else if (gdir.getStatus().code == G_GEO_SERVER_ERROR)
+         alert("A geocoding or directions request could not be successfully processed, yet the exact reason for the failure is not known.\n Error code: " + gdir.getStatus().code);
+       
+       else if (gdir.getStatus().code == G_GEO_MISSING_QUERY)
+         alert("The HTTP q parameter was either missing or had no value. For geocoder requests, this means that an empty address was specified as input. For directions requests, this means that no query was specified in the input.\n Error code: " + gdir.getStatus().code);
+
+    //   else if (gdir.getStatus().code == G_UNAVAILABLE_ADDRESS)  <--- Doc bug... this is either not defined, or Doc is wrong
+    //     alert("The geocode for the given address or the route for the given directions query cannot be returned due to legal or contractual reasons.\n Error code: " + gdir.getStatus().code);
+         
+       else if (gdir.getStatus().code == G_GEO_BAD_KEY)
+         alert("The given key is either invalid or does not match the domain for which it was given. \n Error code: " + gdir.getStatus().code);
+
+       else if (gdir.getStatus().code == G_GEO_BAD_REQUEST)
+         alert("A directions request could not be successfully parsed.\n Error code: " + gdir.getStatus().code);
+        
+       else alert("An unknown error occurred.");
+       
+    }
+
+    function onGDirectionsLoad(){ 
+      // Use this function to access information about the latest load()
+      // results.
+
+      // e.g.
+      // document.getElementById("getStatus").innerHTML = gdir.getStatus().code;
+      // and yada yada yada...
+    }
+    </script>
+
+  </head>
+  <body onload="initialize()" onunload="GUnload()">
+  
+  <form action="#" onsubmit="setDirections(this.from.value, this.to.value, this.locale.value); return false">
+
+  <table class="directions">
+
+   <tr><th align="right">From:&nbsp;</th>
+
+   <td><input type="text" size="25" id="fromAddress" name="from"
+     value="Downtown Los Angeles" /></td>
+   <th align="right">&nbsp;&nbsp;To:&nbsp;</th>
+   <td align="right"><input type="text" size="25" id="toAddress" name="to"
+     value="1 World Way Los Angeles, Ca 90045" /></td></tr>
+
+   <tr><th>Language:&nbsp;</th>
+   <td colspan="3"><select id="locale" name="locale">
+
+    <option value="en" selected>English</option>
+
+    <option value="ja">Japanese</http://www.cafepress.com/frarjoption>
+    <option value="de">German</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+    <option value="it">Italian</option>
+    <option value="th">Thai</option>
+    <option value="ru">Russian</option>
+    </select>
+
+    <input name="submit" type="submit" value="Get Directions!" /> 
+    <input type="button" value="Toggle Traffic" onClick="toggleTraffic();"/>
+    <INPUT TYPE="button" value="Print" onClick="window.print()">
+   </td></tr>
+   </table>
+
+    
+  </form>
+
+    <table class="directions" border="0" cellpadding="3" cellspacing="1">
+    <tr><th>Formatted Directions</th><th>Map</th></tr>
+
+    <tr>
+    <td valign="top"><div id="directions" style="overflow:scroll; width: 275px; height: 500px"></div></td>
+    <td valign="top"><div id="map_canvas" style="width: 720px; height: 500px"></div></td>
+
+    </tr>
+    </table> 
+  </body>
+</html>

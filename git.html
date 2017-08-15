@@ -12,12 +12,21 @@
 - Undo Commit :
 	$ git commit --amend -m "Hehe"
 - Clone github to local : git clone url namefolder
+<<<<<<< HEAD
 - Push to github :
 	git init
 	git add .
 	git commit -m "Initial commit"
 	git remote add origin <project url>
 	git push -f origin master
+=======
+- Push to github : 
+	git remote add <name> <url>
+	git commit -a --allow-empty-message -m ""
+	git pull --rebase origin master
+	git reset --mixed origin/master
+	git push origin master
+>>>>>>> 0ebcdfda1e682ed5c3dd503b4ee6a342a92ca67a
 - View log : 
 	git log
 	git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" ------> git lg
