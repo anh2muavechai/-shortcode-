@@ -173,3 +173,50 @@ where
 	coalesce(nullif(me.stopflg, ''), '0', me.stopflg) != '1'
 group by se.shcacode
 order by se.shcacode;
+
+//insert
+INSERT INTO t_cable_price(
+            series, type, m_lang_id, pimlus_series_name, encoder, controller, 
+            cable_size, cable_sign, price, add_datetime, add_user, upd_datetime, 
+            upd_user)
+    VALUES (1, 1, 1, 1, 1, 1, 
+            1, 1, 1, now(), 1, now(), 
+            1);
+
+
+//create table
+CREATE TABLE t_cable_price (
+	NO BIGSERIAL NOT NULL , -- 自動採番 --
+	series text NOT NULL,-- シリーズ列 --
+	type text NOT NULL,-- タイプ列 --
+	m_lang_id int NOT NULL, -- 言語区分 --
+	pimlus_series_name text NOT NULL, -- series + "-" + type --
+	encoder text, -- エンコーダ列の値 --
+	controller text, --適応コントローラ列の値 --
+	cable_size int NOT NULL, -- ケーブル長列の値 --
+	cable_sign text NOT NULL, -- ケーブル記号列の値 --
+	price text NOT NULL, -- 標準価格列の値 --
+	add_datetime timestamp without time zone DEFAULT now(), -- 登録日 --
+	add_user int NOT NULL, -- 登録者のID --
+	upd_datetime timestamp without time zone DEFAULT now(), -- 更新日 --
+	upd_user int NOT NULL, -- 更新者のID --
+    CONSTRAINT NO PRIMARY KEY (NO)
+);
+ALTER TABLE t_cable_price
+  OWNER TO postgres;
+COMMENT ON TABLE t_cable_price
+  IS 'Table: t_cable_price';
+COMMENT ON COLUMN t_cable_price.NO IS '自動採番';
+COMMENT ON COLUMN t_cable_price.series IS 'シリーズ列';
+COMMENT ON COLUMN t_cable_price.type IS 'タイプ列';
+COMMENT ON COLUMN t_cable_price.m_lang_id IS '言語区分';
+COMMENT ON COLUMN t_cable_price.pimlus_series_name IS 'series + "-" + type';
+COMMENT ON COLUMN t_cable_price.encoder IS 'エンコーダ列の値';
+COMMENT ON COLUMN t_cable_price.controller IS '適応コントローラ列の値';
+COMMENT ON COLUMN t_cable_price.cable_size IS 'ケーブル長列の値';
+COMMENT ON COLUMN t_cable_price.cable_sign IS 'ケーブル記号列の値';
+COMMENT ON COLUMN t_cable_price.price IS '標準価格列の値';
+COMMENT ON COLUMN t_cable_price.add_datetime IS '登録日';
+COMMENT ON COLUMN t_cable_price.add_user IS '登録者のID';
+COMMENT ON COLUMN t_cable_price.upd_datetime IS '更新日';
+COMMENT ON COLUMN t_cable_price.upd_user IS '更新者のID';
