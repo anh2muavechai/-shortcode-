@@ -1,0 +1,2 @@
+<a href="javascript:void(0)" onclick="document.getElementById('select_file_upload').click(); return false;" class="button" />アップロード</a>
+<input type="file" id="select_file_upload" style="visibility: hidden;" accept=".xlsx, .xls" name="file_upload" />
