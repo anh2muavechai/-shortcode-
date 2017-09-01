@@ -6,7 +6,7 @@
 - Create Responsity : $ git init git_example
 - Add file to Git : git add readme.txt or git add * (all file)
 - View status : git status
-- Commit : 
+- Commit :
 	git commit -m 'message'
 	git commit -a --allow-empty-message -m ""
 - Undo Commit :
@@ -20,14 +20,14 @@
 	git remote add origin <project url>
 	git push -f origin master
 =======
-- Push to github : 
+- Push to github :
 	git remote add <name> <url>
 	git commit -a --allow-empty-message -m ""
 	git pull --rebase origin master
 	git reset --mixed origin/master
 	git push origin master
 >>>>>>> 0ebcdfda1e682ed5c3dd503b4ee6a342a92ca67a
-- View log : 
+- View log :
 	git log
 	git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" ------> git lg
 
@@ -35,3 +35,7 @@
 - View branch : git branch
 - Create branch : git branch namebranch
 - Access to branch : git checkout namebranch
+
+>>>>>>>>>>
+- View origin : git remote - v
+- Change remote url : git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
