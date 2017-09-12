@@ -1,14 +1,32 @@
- //Array of taxonomies to get terms for
- $taxonomies = array('tin-tuc-bds');
- $Catalog = get_category( get_query_var( 'tin-tuc-bds' ) );
- //Set arguments - don't 'hide' empty terms.
- $args = array(
-     'hide_empty' => 0
- );
+<?php 
+// Listar las taxonomías 'post_tag' y 'my_tax'
+$taxonomia = array( 
+    'post_tag',
+    'my_tax',
+);
 
- $terms = get_terms( $taxonomies, $args);
- echo '<pre>';
- print_r($Catalog);
- print_r( $terms );
- echo '</pre>';
- exit;
+$args = array(
+    'orderby'           => 'name', 
+    'order'             => 'ASC',
+    'hide_empty'        => true, 
+    'exclude'           => array(), 
+    'exclude_tree'      => array(), 
+    'include'           => array(),
+    'number'            => '', 
+    'fields'            => 'all', 
+    'slug'              => '',
+    'parent'            => '',
+    'hierarchical'      => true, 
+    'child_of'          => 0,
+    'childless'         => false,
+    'get'               => '', 
+    'name__like'        => '',
+    'description__like' => '',
+    'pad_counts'        => false, 
+    'offset'            => '', 
+    'search'            => '', 
+    'cache_domain'      => 'core'
+); 
+
+$terms = get_terms($taxonomies, $args);
+?>

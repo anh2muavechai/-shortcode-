@@ -1,3 +1,4 @@
+<?php
 /**
  * Ken Pagination
  * @param  string  $pages [description]

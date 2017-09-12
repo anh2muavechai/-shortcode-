@@ -1,5 +1,5 @@
+<?php
 $args = array(
-
     'post_type'        => POST_TYPE,
     'posts_per_page'   => 20,
     'no_found_rows'    => true,
@@ -23,7 +23,5 @@ $args = array(
             'compare'      => '!=',
         )
     ),
-
 );
-
 $query = new WP_Query( $args );
