@@ -1,3 +1,4 @@
+<?php
 //  Include PHPExcel_IOFactory
 include 'PHPExcel/IOFactory.php';
 
@@ -13,12 +14,12 @@ try {
 }
 
 //  Get worksheet dimensions
-$sheet = $objPHPExcel->getSheet(0); 
-$highestRow = $sheet->getHighestRow(); 
+$sheet = $objPHPExcel->getSheet(0);
+$highestRow = $sheet->getHighestRow();
 $highestColumn = $sheet->getHighestColumn();
 
 //  Loop through each row of the worksheet in turn
-for ($row = 1; $row <= $highestRow; $row++){ 
+for ($row = 1; $row <= $highestRow; $row++){
     //  Read a row of data into an array
     $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
                                     NULL,
