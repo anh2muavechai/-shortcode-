@@ -14,7 +14,7 @@ if( count($menuItems) > 0 ){ ?>
                 <li class=" level_1  dropdown">
                     <a href="<?php echo($item->url) ?>" title="<?php echo($item->title) ?>" rel="dofollow">
                         <?php
-                            $menu_icon = get_post_meta( $item->ID, 'ken_MenuIcon', true );; 
+                            $menu_icon = get_post_meta( $item->ID, 'ken_MenuIcon', true );;
                         ?>
                         <?php if( $menu_icon != "" ) : ?>
                             <span class="btn-info iconbox">
@@ -42,9 +42,10 @@ if( count($menuItems) > 0 ){ ?>
 
 function menudequy($menus, $id_parent = 0){
    	// b1
+    $menu_tmp = array();
 	foreach ($menus as $key =>$item) {
 		if ($id_parent == $item->menu_item_parent) {
-			$menu_tmp[] = (array)$item;
+			$menu_tmp[] = $item;
 			// Sau khi thêm vào biên lưu trữ menu ở bước lặp
 			// thì unset nó ra khỏi danh sách menu ở các bước tiếp theo
 			unset($menus[$key]);
@@ -52,18 +53,16 @@ function menudequy($menus, $id_parent = 0){
 	}
     // b2
 	if ($menu_tmp) {
-		foreach ($menu_tmp as $a => $b)
-		{
-			foreach ($menus as $key => $value) {
-				if($b['ID']==$value->menu_item_parent){
-					$menu_tmp[$a] = (array)$menu_tmp[$a];
-					$menu_tmp[$a]['sub'][] = (array)$value;
-					unset($menus[$key]);
-				}
-			}
-		}
+        foreach ($menu_tmp as $key => $value){
+            $new_menu = menudequy( $menus, $value->menu_item_parent);
+            if( count( $new_menu['menu_tmp'] ) > 0 ){
+                $menu_tmp[$key]['sub'] = $new_menu['menu_tmp'];
+            }
+        }
 	}
-	return $menu_tmp;
+    $return_menu['menus'] = $menus;
+    $return_menu['menu_tmp'] = $menu_tmp;
+	return $return_menu;
 }
 
 function getChild($parent_id) {
