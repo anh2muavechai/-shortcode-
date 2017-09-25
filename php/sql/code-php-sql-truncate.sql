@@ -1,1 +1,0 @@
-TRUNCATE tmp_list_data_color RESTART IDENTITY;
