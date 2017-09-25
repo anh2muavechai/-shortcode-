@@ -1,0 +1,1 @@
+TRUNCATE t_cable_price RESTART IDENTITY;
