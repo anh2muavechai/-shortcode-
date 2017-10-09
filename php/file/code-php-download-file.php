@@ -1,5 +1,5 @@
 <?php
-public function export_csv($filepath)
+function export_csv($filepath)
     {
         /*header('Content-Type: application/octet-stream');
         header('Content-Disposition: attachment; filename='.basename('file.csv'));
