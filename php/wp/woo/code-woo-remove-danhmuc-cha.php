@@ -1,3 +1,4 @@
+<?php
 // Remove product cat base
 add_filter('term_link', 'devvn_no_term_parents', 1000, 3);
 function devvn_no_term_parents($url, $term, $taxonomy) {
@@ -7,7 +8,7 @@ function devvn_no_term_parents($url, $term, $taxonomy) {
     }
     return $url;
 }
- 
+
 // Add our custom product cat rewrite rules
 function devvn_no_product_cat_parents_rewrite_rules($flash = false) {
     $terms = get_terms( array(
@@ -27,7 +28,7 @@ function devvn_no_product_cat_parents_rewrite_rules($flash = false) {
         flush_rewrite_rules(false);
 }
 add_action('init', 'devvn_no_product_cat_parents_rewrite_rules');
- 
+
 /*Sửa lỗi khi tạo mới taxomony bị 404*/
 add_action( 'create_term', 'devvn_new_product_cat_edit_success', 10, 2 );
 function devvn_new_product_cat_edit_success( $term_id, $taxonomy ) {

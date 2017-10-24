@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "D:\\xampp\\htdocs\\test"
 		}
 	]
 }
