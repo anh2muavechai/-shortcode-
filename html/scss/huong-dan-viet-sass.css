@@ -1,0 +1,74 @@
+/*Sử dụng biến (Varibles) – $tên-biến*/
+/*vd:*/
+$primary_shadow: 5px 5px 5px #000000;
+h1.post_title {text-shadow: $primary_shadow}
+
+/*Quy tắc Mixin – @mixin tên_mix*/
+/*vd*/
+@mixin float-left($float,$margin) {
+	float: $float;
+	margin: $margin;
+}
+.class_1 {
+	@include float-left(right,5px 10px)
+}
+
+/*Extends – Kế thừa @extend tên_class*/
+/*vd*/
+.button_1 {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}
+.button_2 {
+	@extend .button_1;
+}
+
+/*Vùng chọn %name*/
+/*Vùng chọn %name nó cũng giống như .name và #name trong CSS, chỉ có điều khi bạn khai báo một class %name thì nó sẽ không xuất ra file CSS mà chỉ xuất ra khi bạn tiến hành extend nó*/
+/*vd*/
+%fuck_you {
+	color: #red;
+	margin: 5px 10px;
+}
+.fuck_me { @extend %fuck_you; }
+
+/*CÁC MỆNH ĐỀ ĐIỀU KIỆN TRONG SASS*/
+/*VD*/
+@if $turn == yes {
+ .button_1 {
+ background-color: #ededed;
+ -moz-border-radius: 6px;
+ -webkit-border-radius: 6px;
+ border-radius: 6px;
+ border: 1px solid #dcdcdc;
+ display: inline-block;
+ color: #777777;
+ font-family: arial;
+ font-size: 15px;
+ font-weight: bold;
+ padding: 6px 24px;
+ text-decoration: none;
+ text-shadow: 1px 1px 0px #ffffff; }}
+ /*or*/
+ @if $turn == yes {
+	.button_1 {color: red;}
+} @else {
+	.button_1_extra {color: blue;}
+}
