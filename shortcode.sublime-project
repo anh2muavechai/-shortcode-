@@ -2,13 +2,13 @@
 	"folders":
 	[
 		{
-			"path": "."
-		},
-		{
 			"path": "D:\\xampp\\htdocs\\test"
 		},
 		{
-			"path": "D:\\Desktop\\New folder"
+			"path": "D:\\Desktop\\display-flex"
+		},
+		{
+			"path": "D:\\laragon\\www"
 		}
 	]
 }

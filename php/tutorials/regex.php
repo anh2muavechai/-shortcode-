@@ -1,5 +1,13 @@
 <?php
 // Một regex được đặt trong dấu ngoặc tròn () (khớp với cả regex)
+
+/*Một pattern sẽ bắt đầu bằng dấu "/" và kết thúc cũng bằng dấu "/".
+Đằng sau cặp dấu này là 3 ký tự flag:
+
+i: không phân biệt hoa thường
+g: so khớp lặp lại với các ký tự khác trong toàn bộ văn bản
+m: cho phép so khớp theo từng dòng đối với văn bản đa dòng và có sử dụng cặp "^$".*/
+
 // Một biểu thức ngoặc (xem ví dụ)
 	// . (khớp với bất kỳ ký tự nào)
 	// ^ (khớp với xâu rỗng ở đầu dòng)
@@ -26,6 +34,7 @@
 // • preg_replace_callback
 // • preg_split
 
+// \{(.*?)\} lấy tất cả ký tự giữa {}
 
 
 // vD
