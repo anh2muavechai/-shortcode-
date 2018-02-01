@@ -60,9 +60,9 @@ function menudequy($menus, $id_parent = 0){
             }
         }
 	}
-    $return_menu['menus'] = $menus;
+    // $return_menu['menus'] = $menus;
     $return_menu['menu_tmp'] = $menu_tmp;
-	return $return_menu;
+	return $return_menu['menu_tmp'];
 }
 
 function getChild($parent_id) {

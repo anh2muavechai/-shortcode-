@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"va",
+				"variable"
+			],
+			[
+				"pro",
+				"protected〔keyword〕"
+			],
+			[
 				"fie",
 				"filename"
 			],
@@ -240,10 +248,6 @@
 				"list_section_id"
 			],
 			[
-				"va",
-				"var_dump"
-			],
-			[
 				"no",
 				"nodeValue"
 			],
@@ -279,23 +283,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/xampp/htdocs/test/test.html",
-			"settings":
-			{
-				"buffer_size": 1393,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/laragon/www/demo/wp/mvc/wp-content/plugins/anime-list/app/config/bootstrap.php",
-			"settings":
-			{
-				"buffer_size": 253,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -366,24 +353,83 @@
 	},
 	"expanded_folders":
 	[
-		"/D/xampp/htdocs/test",
 		"/D/laragon/www",
-		"/D/laragon/www/demo",
-		"/D/laragon/www/demo/wp",
-		"/D/laragon/www/demo/wp/mvc",
-		"/D/laragon/www/demo/wp/mvc/wp-content",
-		"/D/laragon/www/demo/wp/mvc/wp-content/plugins",
-		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/anime-list",
-		"/D/laragon/www/demo/wp/mvc/wp-content/themes",
 		"/D/laragon/www/shortcode",
 		"/D/laragon/www/shortcode/php",
-		"/D/laragon/www/shortcode/php/sql",
-		"/D/laragon/www/shortcode/php/sql/mysql",
-		"/D/laragon/www/shortcode/php/tips",
-		"/D/laragon/www/shortcode/php/tutorials"
+		"/D/laragon/www/shortcode/php/wp"
 	],
 	"file_history":
 	[
+		"/D/laragon/www/shortcode/php/wp/code-wp-pagination.php",
+		"/D/laragon/www/shortcode/jquery/code-js-checkbox.js",
+		"/D/xampp/htdocs/test/index.php",
+		"/D/laragon/www/shortcode/php/wp/menu/code-wp-custom-menu.php",
+		"/D/laragon/www/public/book/wp-content/plugins/contact-form-7/admin/admin.php",
+		"/D/laragon/www/demo/wp/moneycomb/.htaccess",
+		"/D/laragon/www/lixil_dev/tmp/log/20180201_LIXD_578_FILE_NOT_EXISTS_24.log",
+		"/D/laragon/www/shortcode/php/code-debug-line.php",
+		"/D/laragon/www/public/cultofpedagogy/ftpsync.settings",
+		"/D/laragon/www/shortcode/jquery/code-js-get-data-from-html-file.js",
+		"/D/laragon/www/public/book/wp-content/plugins/contact-form-7/settings.php",
+		"/D/laragon/www/public/book/wp-content/plugins/contact-form-7/wp-contact-form-7.php",
+		"/D/Desktop/downloads/update/update/newapps-child/functions/lmh-management.php",
+		"/D/laragon/www/public/book/wp-content/plugins/contact-form-7/includes/functions.php",
+		"/D/Desktop/downloads/update/update/newapps-child/functions/lmh-account.php",
+		"/D/Desktop/downloads/update/update/newapps-child/functions.php",
+		"/D/Desktop/downloads/moneycomb/wp-content/plugins/moneycomb/moneycomb.php",
+		"/D/Desktop/downloads/moneycomb/wp-content/plugins/moneycomb/init.php",
+		"/D/Desktop/downloads/moneycomb/wp-content/plugins/moneycomb/libraries/nepcontroller.php",
+		"/D/Desktop/downloads/moneycomb/wp-content/themes/moneycomb/index.php",
+		"/D/laragon/www/public/book/wp-content/plugins/contact-form-7/uninstall.php",
+		"/D/laragon/www/shortcode/php/wp/code-wp-add-feature-image-to-post-list.php",
+		"/D/laragon/www/shortcode/php/wp/code-wp-get-featured-image.php",
+		"/D/laragon/www/shortcode/php/code-php-error-handler.php",
+		"/D/laragon/www/public/book/wp-content/themes/blank/search.php",
+		"/D/laragon/www/public/book/wp-content/themes/twentyseventeen/search.php",
+		"/D/laragon/www/public/book/wp-content/themes/blank/functions.php",
+		"/D/laragon/www/public/book/wp-content/themes/blank/style.css",
+		"/D/laragon/www/public/book/wp-content/themes/blank-child/functions.php",
+		"/D/laragon/www/public/book/wp-content/themes/blank-child/main.js",
+		"/D/laragon/www/public/book/wp-content/themes/blank-child/style.css",
+		"/D/Desktop/systems/core/redus-frameworks/options.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/default.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/enqueue.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/hook.php",
+		"/D/Desktop/systems/core/settings/hook.php",
+		"/D/Desktop/systems/core/settings/enqueue.php",
+		"/D/Desktop/systems/core/settings/default.php",
+		"/D/laragon/www/demo/wp/blank-master/themes/blank/search.php",
+		"/D/laragon/www/demo/wp/blank-master/themes/blank/comments.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/ajax",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/custom-post-type",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/custom-fields",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/custom-fields.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/assets/js/main.js",
+		"/D/laragon/www/public/book/wp-content/themes/book/assets/css/responsive.scss",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/includes/plugins/wp-editor-widget/wp-editor-widget.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/includes.php",
+		"/D/Desktop/systems/includes/plugins/wp-editor-widget/wp-editor-widget.php",
+		"/D/laragon/www/public/book/wp-content/themes/book-child/style.css",
+		"/D/Desktop/systems/require.php",
+		"/D/Desktop/systems/core/functions.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/custom-post-type.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/widget.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/functions.php",
+		"/D/laragon/www/shortcode/php/code-php-covert-to-vnd.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/systems/core/settings/widgets/widget-functions.php",
+		"/D/laragon/www/public/book/wp-content/themes/book/functions.php",
+		"/D/laragon/www/shortcode/php/common/config.php",
+		"/D/laragon/www/shortcode/php/tutorials/regex.php",
+		"/D/laragon/www/shortcode/php/sql/code-php-cach-backup-data",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/events-calendar-example/app/controllers/admin/admin_events_controller.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/wp-mvc/core/controllers/mvc_admin_controller.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/events-calendar-example/app/controllers/events_controller.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/wp-mvc/examples/events-calendar-example/app/controllers/events_controller.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/wp-mvc/core/models/mvc_model.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/anime-list/app/controllers/anime_lists_controller.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/hierarchical-documentation/app/views/documentation_nodes/_tree.php",
+		"/D/laragon/www/demo/wp/mvc/wp-content/plugins/wp-mvc/core/helpers/mvc_form_helper.php",
+		"/D/xampp/htdocs/test/test.html",
 		"/D/xampp/htdocs/test/script.js",
 		"/D/laragon/www/shortcode/php/tips/code-php-calculator-time-run-functions.php",
 		"/D/laragon/www/public/bds/wp-content/themes/bds/systems/core/settings/custom-post-type.php",
@@ -396,11 +442,9 @@
 		"/C/Users/Ken/AppData/Local/Temp/FileZillaPortableTemp/fz3temp-2/wp-config.php",
 		"/D/laragon/www/shortcode/php/wp/code-wp-get-posts-by-term.php",
 		"/D/laragon/www/shortcode/php/file/code-create-dir.php",
-		"/D/xampp/htdocs/test/index.php",
 		"/D/laragon/www/shortcode/php/file/code-php-get-extension.php",
 		"/D/laragon/www/shortcode/php/file/code-php-rename-file.php",
 		"/D/laragon/www/demo/js/canvas/index.html",
-		"/D/laragon/www/shortcode/php/tutorials/regex.php",
 		"/E/Sublime Text Build 3143 x64/Data/Packages/User/Xdebug.sublime-settings",
 		"/E/Sublime Text Build 3143 x64/Data/Packages/Xdebug Client/Xdebug.sublime-settings",
 		"/D/xampp/htdocs/test/test.sublime-project",
@@ -443,75 +487,7 @@
 		"/D/laragon/www/shortcode/php/file/code-php-download-file.php",
 		"/D/laragon/www/shortcode/php/php-functions/code-php-compare-array.php",
 		"/D/xampp/htdocs/iai_m_tmp/app/template/category/edit.html",
-		"/D/xampp/htdocs/iai_m_tmp/acwork/class/ACWModel.php",
-		"/D/xampp/htdocs/iai_m_tmp/user_config/db_iai_m_tmp.php",
-		"/D/xampp/htdocs/iai_m_tmp/app/model/common/Limit.php",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/User/Notes.sublime-settings",
-		"/D/xampp/htdocs/iai_m_tmp/acwork/class/ACWCore.php",
-		"/D/xampp/htdocs/iai_m_tmp/app/template/include/tree_view.html",
-		"/D/xampp/htdocs/iai_c_dev/app/model/CablePriceImportHistory.php",
-		"/D/xampp/htdocs/iai_m_tmp/index.php",
-		"/D/xampp/htdocs/iai_m_tmp/user_config/initialize.php",
-		"/D/xampp/htdocs/iai_c_dev/user_config/db_iai_c_dev.php",
-		"/D/xampp/htdocs/iai_c_dev/user_config/config_iai_c_dev.php",
-		"/D/xampp/htdocs/iai_m_tmp/.htaccess",
-		"/D/xampp/htdocs/iai_m_tmp/user_config/config_iai_m_tmp.php",
-		"/D/xampp/htdocs/iai_c_dev/backup_patch/batch_test.php",
-		"/D/xampp/htdocs/test.php",
-		"/D/xampp/htdocs/iai_c_dev/app/model/ImportCablePrice.php",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/User/Base File.sublime-settings",
-		"/D/Desktop/ImportCablePrice.php",
-		"/D/xampp/htdocs/iai_c_dev/app/model/BatchImportCablePrice.php",
-		"/D/xampp/htdocs/iai_c_dev/user_config/define.php",
-		"/D/xampp/htdocs/iai_c_dev/backup_patch/BP_IAI_CATALOG-21_Update_Section_KBN.php",
-		"/C/Users/Ken/Dropbox/Notes/BP_IAI_CATALOG-21_Update_Section_KBN.note",
-		"/D/xampp/htdocs/iai_c_dev/BP_IAI_CATALOG-21_RESULT.txt",
-		"/D/xampp/htdocs/iai_c_dev/BP_IAI_CATALOG-21_Update_Section_KBN.php",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/User/SQL Beautifier.sublime-settings",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/SqlBeautifier/SQL Beautifier.sublime-settings",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
-		"/C/Users/Ken/Dropbox/Notes/text.note",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/PlainNotes/Notes.sublime-settings",
-		"/D/laragon/www/shortcode/php/sql/postgresql/code-sql-recursive.sql",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/User/Xdebug.sublime-settings",
-		"/D/xampp/htdocs/iai_c_dev/backup_patch/BP_IAI_CATALOG-23_Move_Series.php",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/phpcbf/phpcbf.sublime-settings",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/phpcbf/Default (Windows).sublime-keymap",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
-		"/C/Users/Ken/Dropbox/Notes/BP_IAI_CATALOG-23_Move_Series.note",
-		"/D/xampp/htdocs/iai_c_dev/app/model/Series.php",
-		"/D/xampp/htdocs/iai_c_dev/app/template/series/view.html",
-		"/C/Users/Ken/Dropbox/Notes/.brain/Inbox.note",
-		"/D/xampp/htdocs/iai_c_dev/app/lib/FileWindows.php",
-		"/D/xampp/htdocs/iai_c_dev/app/model/BatchImportCablePrice_.php",
-		"/D/Desktop/save/task/BP_LIXD-701_BatchExportListDataColor/BP_LIXD-701_BatchExportListDataColor_batch_1.php",
-		"/D/Desktop/save/task/BP_LIXD-701_BatchExportListDataColor/BP_LIXD-701_BatchExportListDataColor_list_batch_2.php",
-		"/D/xampp/htdocs/iai_c_dev/app/vendor/simple_html_dom.php",
-		"/D/xampp/htdocs/iai_c_dev/backup_patch/BP_IAI_CATALOG-23_Move_Series_Data.php",
-		"/C/Users/Ken/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
-		"/D/xampp/htdocs/iai_c_dev/IAI.sublime-project",
-		"/D/xampp/htdocs/iai_c_release_user/app/model/IaiController.php",
-		"/D/Desktop/excel_com/excel_com.txt",
-		"/D/xampp/htdocs/iai_c_release_user/backup_patch/LIXD_578_Update_sheetname_index_shohincode.php",
-		"/D/xampp/htdocs/iai_c_release_user/batch_test.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/vendor/phpexcel/PHPExcel.php",
-		"/D/xampp/htdocs/iai_c_release_user/Patch_checkshohincode.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/lib/ExcelCOM.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/lib/Excel.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/lib/ExcelToXml.php",
-		"/D/laragon/www/shortcode/php/lib/phpexcel/code-php-phpexcell.php",
-		"/D/Projects/nbk_projectr/02.Source/nbk_src_release/app/lib/HeaderExcel.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/model/ItemExportExcel.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/model/BatchItemImportExcelDetail.php",
-		"/D/xampp/htdocs/lixil_dev/backup_patch/BP_LIXD-698_BatchSaveItemcode_list_file.php",
-		"/D/xampp/htdocs/lixil_dev/backup_patch/BP_LIXD-698_BatchSaveItemcode_list_file_1.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/model/common/ItemImportExportExcel.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/lib/ImportExport.php",
-		"/D/xampp/htdocs/iai_c_release_user/app/model/Itemcode.php",
-		"/D/xampp/htdocs/iai_c_release_user/backup_patch/LIXD_578_batch_fix.php",
-		"/D/xampp/htdocs/iai_c_release_user/backup_patch/LIXD_578_batch2_v2.php"
+		"/D/xampp/htdocs/iai_m_tmp/acwork/class/ACWModel.php"
 	],
 	"find":
 	{
@@ -529,6 +505,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"wpcf7_admin_add_new_page",
+			"lmh",
+			"get_templ",
+			"SYSTEM_DIR",
+			"getDistrict",
+			"aside",
 			"preg_match",
 			"\\r\\n",
 			"/n"
@@ -549,398 +531,14 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/xampp/htdocs/test/test.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1393,
-								1393
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1886,
-										1887
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1869,
-										1870
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1388,
-										1392
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/tag.png",
-										"region.orangish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										17,
-										21
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/laragon/www/demo/wp/mvc/wp-content/plugins/anime-list/app/config/bootstrap.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 253,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -977,6 +575,10 @@
 	{
 		"height": 91.0
 	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
 	"output.xdebug":
 	{
 		"height": 91.0
@@ -994,6 +596,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"_tree.php",
+				"www\\demo\\wp\\mvc\\wp-content\\plugins\\hierarchical-documentation\\app\\views\\documentation_nodes\\_tree.php"
+			],
 			[
 				"treeview",
 				"app\\template\\include\\tree_view.html"
@@ -1132,7 +738,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 362.0,
+	"side_bar_width": 388.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
