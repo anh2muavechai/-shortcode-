@@ -97,3 +97,7 @@ $subject = 's';
 if (preg_match($pattern, $subject)){
     echo 'Chuỗi regex so khớp';
 }
+
+//kiểm tra số sau dấu _
+$subject = '製品寸法表fasdf';
+$pattern = '/^製品寸法表(_\d+)?$/';
