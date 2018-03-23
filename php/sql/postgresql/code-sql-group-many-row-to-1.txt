@@ -1,0 +1,9 @@
+SELECT it.series_id, it.exists_flg item_no_status, tableb.exists_flg excel_status, it.folderpath item_no_path, tableb.excel_path
+FROM      t_check_itemno_exists it
+LEFT JOIN  ( 
+	SELECT series_id, exists_flg, string_agg(path_file, ' ; ') as excel_path from (
+		SELECT series_id, exists_flg, folderpath ||'/'|| headerfilename path_file FROM t_check_headerexcel_exists
+	) as tmp
+	GROUP BY series_id, exists_flg
+) tableb ON tableb.series_id = it.series_id
+ORDER BY  it.series_id
