@@ -363,7 +363,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 333.0,
+		"height": 392.0,
 		"last_filter": "insta",
 		"selected_items":
 		[
@@ -404,7 +404,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 540.0
+		"width": 476.0
 	},
 	"console":
 	{
@@ -426,12 +426,46 @@
 	"expanded_folders":
 	[
 		"/D/laragon/www",
-		"/D/laragon/www/demo",
-		"/D/laragon/www/demo/laravel",
-		"/D/laragon/www/demo/laravel/asgards"
+		"/D/laragon/www/public",
+		"/D/laragon/www/public/wonder.vn",
+		"/D/laragon/www/public/wonder.vn/wp-content",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static/css",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static/js",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/views",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/text-html",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/inc",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/inc/includes"
 	],
 	"file_history":
 	[
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/config.php",
+		"/D/laragon/www/public/wonder.vn/wp-config.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/text-block/options.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/text-html/config.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/text-html/options.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/plugins/unyson/framework/includes/option-types/wp-editor/includes/class-fw-wp-editor-settings.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/functions.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/inc/includes/tinymce-helper.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/header.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/inc/hooks.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/theme/lib/js/admin-panel.js",
+		"/D/laragon/www/public/wonder.vn/wp-includes/js/tinymce/tinymce.min.js",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/class-fw-shortcode-section.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/views/view.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/includes/page-builder-section-item/class-page-builder-section-item.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/includes/template-component/class-fw-ext-builder-templates-component-section.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/includes/template-component/init.php",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/includes/template-component/scripts.js",
+		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/includes/template-component/styles.css",
 		"/D/laragon/www/demo/laravel/test/.env",
 		"/D/laragon/www/demo/laravel/testvue/config/app.php",
 		"/D/laragon/www/demo/laravel/testvue/.env",
@@ -539,27 +573,7 @@
 		"/D/laragon/www/demo/wp/hinhanh/wp-config.php",
 		"/D/laragon/www/nw/database-nw/localhost (10).sql",
 		"/D/laragon/www/nw/database-nw/localhost.sql",
-		"/D/laragon/www/wp/code-wp-delete-all-attachment-images.php",
-		"/D/Desktop/visa/sources/visa/functions.php",
-		"/D/laragon/www/demo/php/onepay1.php",
-		"/D/Desktop/test.php",
-		"/D/laragon/www/shortcode/php/code-php-covert-to-vnd.php",
-		"/D/laragon/www/demo/html/jhu.edu/www.jhu.edu.html",
-		"/C/Users/Ken/AppData/Local/Temp/Rar$DIa0.765/index.php",
-		"/D/Desktop/series.xml",
-		"/D/Desktop/New folder/test.php",
-		"/E/procexp/FileZillaPortable/Data/settings/filezilla.xml",
-		"/E/procexp/FileZillaPortable/App/DefaultData/settings/filezilla.xml",
-		"/E/FileZillaPortable/Data/settings/filezilla.xml",
-		"/E/FileZillaPortable/App/DefaultData/settings/filezilla.xml",
-		"/D/laragon/www/shortcode/php/code-php-recursion-menu.php",
-		"/D/laragon/www/lixil_dev/user_config/objectstorage_lixil_dev.php",
-		"/D/Desktop/visa/page-visa.php",
-		"/D/Desktop/visa/visa/sources/quocte_php/index.php",
-		"/D/Desktop/New folder/quocte_php/index.php",
-		"/D/laragon/www/demo/php/quocte_php/index.php",
-		"/D/xampp/htdocs/oracle/index.php",
-		"/D/laragon/www/shortcode/git.html"
+		"/D/laragon/www/wp/code-wp-delete-all-attachment-images.php"
 	],
 	"find":
 	{
@@ -585,9 +599,24 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"Block",
+			"dettach_filters",
+			"opts",
+			"mce_settings_callback",
+			"extended_valid_elements",
+			"get_shortcode",
+			"section",
+			"Section",
+			"section",
+			"Section",
+			"section",
+			"Section",
+			"section",
+			"Section",
+			"section",
 			"delete_price",
 			"入力依頼",
 			"loadRoutesFrom",
@@ -645,6 +674,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"container",
+			"Container",
+			"container",
+			"Container",
+			"container",
+			"Container",
+			"container",
 			".localhost"
 		],
 		"reverse": false,
@@ -729,6 +765,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"tinymce",
+				"www\\public\\wonder.vn\\wp-includes\\js\\tinymce\\tinymce.min.js"
+			],
 			[
 				"application",
 				"www\\demo\\laravel\\test\\vendor\\symfony\\console\\Application.php"
@@ -875,7 +915,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 406.0,
+	"side_bar_width": 429.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

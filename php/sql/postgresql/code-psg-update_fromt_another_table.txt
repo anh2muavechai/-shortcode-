@@ -1,0 +1,7 @@
+UPDATE 
+t_brand_color_use
+SET 
+"brand_code" = m_brand.m_brand_id
+FROM m_brand
+WHERE 
+   t_brand_color_use.brand_code          = m_brand.brand_code
