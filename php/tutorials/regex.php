@@ -19,6 +19,7 @@ m: cho phép so khớp theo từng dòng đối với văn bản đa dòng và c
 	// + Đại diện cho 1 hoặc nhiều ký tự.
 	// ? 1 hoặc không có ký tự nào
 
+
 //các ký tự đặc biệt
 // \d - Chữ số bất kỳ ~ [0-9]
 // \D - Ký tự bất kỳ không phải là chữ số (ngược với \d) ~ [^0-9]
@@ -38,6 +39,9 @@ m: cho phép so khớp theo từng dòng đối với văn bản đa dòng và c
 
 
 // vD
+
+//regex bat dau cua chuoi va ket thuc bang ky tu : /^{\S*}$/
+
 
 $subject='Give me 10 eggs';
 $pattern='~\b(\d+)\s*(\w+)$~';
@@ -101,3 +105,6 @@ if (preg_match($pattern, $subject)){
 //kiểm tra số sau dấu _
 $subject = '製品寸法表fasdf';
 $pattern = '/^製品寸法表(_\d+)?$/';
+
+
+
