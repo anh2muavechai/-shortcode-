@@ -363,10 +363,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "insta",
+		"height": 203.0,
+		"last_filter": "remov",
 		"selected_items":
 		[
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -388,10 +392,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"remov",
-				"Package Control: Remove Package"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
 			],
@@ -404,7 +404,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 476.0
+		"width": 447.0
 	},
 	"console":
 	{
@@ -425,27 +425,24 @@
 	},
 	"expanded_folders":
 	[
-		"/D/laragon/www",
-		"/D/laragon/www/public",
-		"/D/laragon/www/public/wonder.vn",
-		"/D/laragon/www/public/wonder.vn/wp-content",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static/css",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/static/js",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/views",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/text-html",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/inc",
-		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/inc/includes"
+		"/D/laragon/www"
 	],
 	"file_history":
 	[
+		"/D/laragon/www/public/framework/wp-config.php",
+		"/D/laragon/www/public/framework/ftpsync.settings",
+		"/D/xampp/htdocs/test/script.js",
+		"/D/xampp/htdocs/test/sftp-config.json",
+		"/D/laragon/www/demo/laravel/laravel_vue-develop/resources/assets/js/app.js",
+		"/D/laragon/www/demo/laravel/first_project/resources/assets/js/app.js",
+		"/D/laragon/www/demo/laravel/test/resources/assets/js/app.js",
+		"/D/laragon/www/demo/laravel/first_project/resources/assets/js/bootstrap.js",
+		"/D/laragon/www/demo/laravel/test/resources/assets/js/app.vue",
+		"/D/laragon/www/demo/laravel/test/resources/views/testvujs.blade.php",
+		"/D/laragon/www/demo/laravel/test/resources/assets/js/components/Listsp.vue",
+		"/D/laragon/www/demo/laravel/laravel_vue-develop/resources/views/admin/companies/index.blade.php",
+		"/D/laragon/www/public/framework/abcd",
+		"/D/laragon/www/demo/laravel/first_project/resources/views/welcome.blade.php",
 		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/container/config.php",
 		"/D/laragon/www/public/wonder.vn/wp-config.php",
 		"/D/laragon/www/public/wonder.vn/wp-content/themes/ken/framework-customizations/extensions/shortcodes/shortcodes/text-block/options.php",
@@ -472,10 +469,6 @@
 		"/D/laragon/www/demo/laravel/test/resources/assets/js/components/CreateSanpham.vue",
 		"/D/laragon/www/demo/laravel/test/app/Http/Controllers/SanphamController.php",
 		"/D/laragon/www/demo/laravel/test/resources/assets/js/components/Editsp.vue",
-		"/D/laragon/www/demo/laravel/test/resources/views/testvujs.blade.php",
-		"/D/laragon/www/demo/laravel/test/resources/assets/js/components/Listsp.vue",
-		"/D/laragon/www/demo/laravel/test/resources/assets/js/app.vue",
-		"/D/laragon/www/demo/laravel/test/resources/assets/js/app.js",
 		"/D/laragon/www/demo/laravel/test/routes/web.php",
 		"/D/laragon/www/demo/laravel/test/public/index.php",
 		"/D/laragon/www/demo/laravel/test/app/Sanphams.php",
@@ -499,7 +492,6 @@
 		"/D/laragon/www/demo/laravel/test/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php",
 		"/D/laragon/www/demo/laravel/test/resources/views/data.blade.php",
 		"/D/xampp/htdocs/test/test.html",
-		"/D/xampp/htdocs/test/script.js",
 		"/D/xampp/htdocs/PHP_Form_Security/72phep.php",
 		"/D/laragon/www/demo/laravel/test/vendor/testpackage/test/src/Providers/DefaultProvider.php",
 		"/D/laragon/www/demo/laravel/test/vendor/testpackage/test/src/SimpleAdminServiceProvider.php",
@@ -564,16 +556,7 @@
 		"/D/laragon/www/nw/demoair_offt-migrate-20170616131009.sql",
 		"/D/laragon/www/demo/wp/feedback-wp/wp-content/themes/zwpshare/framework-customizations/theme/options/settings.php",
 		"/D/laragon/www/demo/wp/feedback-wp/.htaccess",
-		"/D/laragon/www/demo/wp/feedback-wp/wp-content/plugins/zing-feedback/extensions/zing-feedback/static/js/script.js",
-		"/D/laragon/www/demo/wp/feedback-wp/wp-content/plugins/zing-feedback/extensions/zing-feedback/helpers.php",
-		"/C/Users/Ken/AppData/Local/Temp/Rar$DIa0.717/wp-config.php",
-		"/D/laragon/www/nw/feedback-wp/wp-config.php",
-		"/D/laragon/www/demo/wp/hinhanh/wp-content/plugins/grap-images/inc/functions.php",
-		"/D/laragon/www/demo/wp/hinhanh/wp-content/plugins/grap-images/grap-images.php",
-		"/D/laragon/www/demo/wp/hinhanh/wp-config.php",
-		"/D/laragon/www/nw/database-nw/localhost (10).sql",
-		"/D/laragon/www/nw/database-nw/localhost.sql",
-		"/D/laragon/www/wp/code-wp-delete-all-attachment-images.php"
+		"/D/laragon/www/demo/wp/feedback-wp/wp-content/plugins/zing-feedback/extensions/zing-feedback/static/js/script.js"
 	],
 	"find":
 	{
@@ -695,11 +678,16 @@
 			"sheets":
 			[
 			]
+		},
+		{
+			"sheets":
+			[
+			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -714,11 +702,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -915,7 +910,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 429.0,
+	"side_bar_width": 240.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
