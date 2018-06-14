@@ -1,0 +1,9 @@
+@supports (-ms-ime-align:auto) {
+//edge
+}
+@media all and (-ms-high-contrast:none) {
+//ie
+}
+@-moz-document url-prefix() {
+//firefox
+}
