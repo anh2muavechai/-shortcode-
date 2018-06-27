@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AlignTab",
+		"All Autocomplete",
+		"ASCII Decorator",
+		"BracketHighlighter",
+		"CodeFormatter",
+		"DeleteBlankLines",
+		"DocBlockr",
+		"DocPHPManualer",
+		"LiveReload",
+		"Package Control",
+		"PackageResourceViewer",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-php",
+		"Volt",
+		"WordPress",
+		"Xdebug Client"
+	]
+}

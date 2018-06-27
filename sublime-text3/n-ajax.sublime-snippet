@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+<div id="LoadingImage" style="display: none">
+  <img src="" />
+</div>
+
+<script>
+    \$("#LoadingImage").show();
+      \$.ajax({
+        type: "GET",
+        url: surl,
+        dataType: "text",
+        beforeSend: function() {
+          // setting a timeout
+          //addClass('loading');
+          i++;
+        },
+        success: function(response) {
+          \$("#LoadingImage").hide();
+          alert("Success");
+        },
+        error: function (xhr, status) {
+          \$("#LoadingImage").hide();
+          alert('Unknown error ' + status);
+        },
+        complete: function() {
+          i--;
+          if (i <= 0) {
+              //.removeClass('loading');
+          }
+        },
+      });
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>n-ajax</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

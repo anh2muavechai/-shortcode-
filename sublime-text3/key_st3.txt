@@ -1,0 +1,19 @@
+[
+	{"keys": ["f11"], "command": "reindent"},
+
+	//xdebug
+	{ "keys": [ "super+shift+s" ], "command" : "xdebug_session_start", "args": {"launch_browser" : true }},
+	{ "keys": [ "super+shift+b" ], "command" : "xdebug_breakpoint"},
+	{ "keys": [ "super+shift+c" ], "command" : "xdebug_conditional_breakpoint" },
+	{ "keys": [ "f10"           ], "command" : "xdebug_continue","args": {"command": "run"}},
+	{ "keys": [ "f5"            ], "command" : "xdebug_continue","args": {"command": "step_over"}},
+	{ "keys": [ "f6"            ], "command" : "xdebug_continue","args": {"command": "step_into"}},
+	{ "keys": [ "super+shift+f7"], "command" : "xdebug_continue","args": {"command": "step_out"}},
+
+	//alignTab
+	{ "keys": ["ctrl+alt+a, ctrl+alt+s"], "command": "align_tab", "args": {"user_input" : "\\s*/l1l0"}},
+	{ "keys": ["ctrl+alt+a, ctrl+alt+r"], "command": "align_tab", "args": {"user_input" : "=>"}},
+	{ "keys": ["ctrl+alt+a, ctrl+alt+e"], "command": "align_tab", "args": {"user_input" : "=/f"}},
+	{ "keys": ["ctrl+alt+a, ctrl+alt+c"], "command": "align_tab", "args": {"user_input" : ":/f"}},
+	{ "keys": ["ctrl+alt+a, ctrl+alt+t"], "command": "align_tab", "args": {"user_input" : "\\s*/l1l0"}},//tab
+]

@@ -43,71 +43,73 @@
     <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-		$.fn.alert = function(options, method){
-			var methods = {
-	            init: function() {},
-	            load: function() {},
-	            run : function() {},
-	            hide: function() {},
-	        };
+    	(function ( $ ) {
+			$.fn.alert = function(options, method){
+				var methods = {
+		            init: function() {},
+		            load: function() {},
+		            run : function() {},
+		            hide: function() {},
+		        };
 
-	        var that = $(this);
-		    var defaults = {
-		        types : 'success',
-		        msg : '<strong>Success!</strong> This alert box indicates a successful or positive action.'
-		    }
-	        //Trien khai ham init
-	        methods.init = function() {
-	            methods.load();
-	            $("#alertModal").on('click', '.close', function(){
-			        $('#alertModal').modal('hide');
-			    });
-	        };
-	        //Trien khai ham load
-	        methods.load = function() {
-	        	options = $.extend(defaults, options);
-	            if( $('#alertModal').length != 0 ){
-	            	var alert = $('#alertModal').find('.alert');
-	            	alert.removeClass();
-		        	alert.addClass('alert alert-'+options.types);
-		        	$('#alert-content').empty().append(options.msg);
-		        }else{
-		        	that.append(''
-		          		+'<div id="alertModal" class="modal fade" role="dialog">'
-			  			+	'<div class="modal-dialog">'
-						+	    '<div class="modal-content">'
-						+	    	'<div class="modal-body">'
-						+	       		'<div class="alert alert-'+options.types+' fade in">'
-						+			    	'<a href="#" class="close" aria-label="close" title="close">×</a>'
-						+			    	'<div id="alert-content">'+options.msg+'<div>'
-						+				'</div>'
-						+	      	'</div>'
-						+	    '</div>'
-						+	'</div>'
-						+'</div>'
-					);
+		        var that = $(this);
+			    var defaults = {
+			        types : 'success',
+			        msg : '<strong>Success!</strong> This alert box indicates a successful or positive action.'
+			    }
+		        //Trien khai ham init
+		        methods.init = function() {
+		            methods.load();
+		            $("#alertModal").on('click', '.close', function(){
+				        $('#alertModal').modal('hide');
+				    });
+		        };
+		        //Trien khai ham load
+		        methods.load = function() {
+		        	options = $.extend(defaults, options);
+		            if( $('#alertModal').length != 0 ){
+		            	var alert = $('#alertModal').find('.alert');
+		            	alert.removeClass();
+			        	alert.addClass('alert alert-'+options.types);
+			        	$('#alert-content').empty().append(options.msg);
+			        }else{
+			        	that.append(''
+			          		+'<div id="alertModal" class="modal fade" role="dialog">'
+				  			+	'<div class="modal-dialog">'
+							+	    '<div class="modal-content">'
+							+	    	'<div class="modal-body">'
+							+	       		'<div class="alert alert-'+options.types+' fade in">'
+							+			    	'<a href="#" class="close" aria-label="close" title="close">×</a>'
+							+			    	'<div id="alert-content">'+options.msg+'<div>'
+							+				'</div>'
+							+	      	'</div>'
+							+	    '</div>'
+							+	'</div>'
+							+'</div>'
+						);
+			        }
+
+		        };
+		        //ham run
+		        methods.run = function(){
+					$("#alertModal").modal('show');
 		        }
-
-	        };
-	        //ham run
-	        methods.run = function(){
-				$("#alertModal").modal('show');
-	        }
-	        //hide
-	        methods.hide = function(){
-				$("#alertModal").modal('hide');
-	        }
-            if ( methods[options] ) {
-	            methods[ options ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-	        } else if ( typeof options === 'object' || ! options ) {
-	            methods.init.apply( this, arguments );
-	            if( Array.prototype.slice.call( arguments, 1 ).length != 0){
-					methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-	            }
-	        } else {
-	            $.error( 'Method ' +  options + ' does not exist on jQuery.alert' );
-	        }
-		};
+		        //hide
+		        methods.hide = function(){
+					$("#alertModal").modal('hide');
+		        }
+	            if ( methods[options] ) {
+		            methods[ options ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+		        } else if ( typeof options === 'object' || ! options ) {
+		            methods.init.apply( this, arguments );
+		            if( Array.prototype.slice.call( arguments, 1 ).length != 0){
+						methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+		            }
+		        } else {
+		            $.error( 'Method ' +  options + ' does not exist on jQuery.alert' );
+		        }
+			};
+		}( jQuery ));
 		$('#myID').alert({
 		    msg : 'Xin chào lập trình viên',
 		    types : 'success'

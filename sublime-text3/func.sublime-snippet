@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\$lstrTarget = \$this->getDataValue($1, ${2:\$lintCol + 3}, \$color_list, \$data);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>n-fff</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
