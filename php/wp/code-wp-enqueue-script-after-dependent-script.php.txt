@@ -1,0 +1,16 @@
+<?php
+function load_theme_scripts(){
+  wp_register_script( 'name-of-enqueued-script', get_bloginfo('template_url').'/js/scripts.js', array('jquery'), '1.0', false );
+}
+add_action('wp_enqueue_scripts','load_theme_scripts' );
+// http://wordpress.stackexchange.com/questions/33008/how-to-add-a-javascript-snippet-to-the-footer-that-requires-jquery
+function load_this_other_script(){
+ if( wp_script_is( 'name-of-enqueued-script', 'done' ) ) {
+  ?>
+  <script type="text/javascript">
+    // script to load after name-of-enqueued-script loads
+  </script>
+  <?php
+  }
+}
+add_action( 'wp_head', 'load_this_other_script' );

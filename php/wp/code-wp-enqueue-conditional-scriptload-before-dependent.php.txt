@@ -1,0 +1,17 @@
+<?php
+function load_scripts(){
+  global $wp_scripts;
+  
+  wp_register_script( 'theme-scripts', get_bloginfo('template_url').'/js/scripts.js', array('jquery'), '1.0', true );
+  
+  //if we're on the woocommerce checkout page
+  if( is_checkout() ){
+    $wp_scripts->add_data('theme-scripts','data','<!--START SCRIPT STRING-->
+      // script to load before name-of-enqueued-script loads
+      jQuery(\'input#billing_first_name\').appear(function(){
+        jQuery(this).focus();
+      });
+      <!--END SCRIPT STRING-->');
+  }
+}
+add_action('wp_enqueue_scripts','load_scripts' );
