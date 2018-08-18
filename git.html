@@ -42,3 +42,13 @@
 >>>>>>>>>> Làm việc với remote <<<<<<<<<<<<
 - git remote - v //kiểm tra tên remote
 - Change remote url : git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
+-------------------------------------------------------------------
+back file deleted
+git rev-list -n 1 HEAD -- <file_path>
+Then checkout the version at the commit before, using the caret (^) symbol:
+
+git checkout <deleting_commit>^ -- <file_path>
+Or in one command, if $file is the file in question.
+
+git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
