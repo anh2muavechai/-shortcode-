@@ -36,8 +36,11 @@ m: cho phép so khớp theo từng dòng đối với văn bản đa dòng và c
 // • preg_split
 
 // \{(.*?)\} lấy tất cả ký tự giữa {}
-
-
+// (([\r\n]+(.*))+ lấy tất cả ký tự
+// ký tự xuống dòng [\r\n]
+// [^a] ko lấy ký tự a
+//{1} lặp lại 1 lần
+//{1,3} 1-3 ký tự
 // vD
 
 //regex bat dau cua chuoi va ket thuc bang ky tu : /^{\S*}$/
