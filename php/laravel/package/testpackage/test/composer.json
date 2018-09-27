@@ -1,0 +1,16 @@
+{
+    "name": "testpackage/test",
+    "description": "test package",
+    "type": "library",
+    "require": {
+        "\u001b": "1.0"
+    },
+    "license": "hello",
+    "authors": [
+        {
+            "name": "anh2muavechai",
+            "email": "anh2muavechai@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

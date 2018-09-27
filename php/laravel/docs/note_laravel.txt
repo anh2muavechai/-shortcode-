@@ -1,0 +1,111 @@
+- Create project: composer create-project laravel/laravel project_name
+- Update lại composer:
+	+ my-laravel-project
+	+ composer self-update
+	+ composer update
+/*----------------------------------------------------------------------------------------------------------*/
+/** Config vue js */
+- php artisan make:auth (để tạo mẫu signup, login, logout.)
+	-> sau khi chạy lệnh sẽ tạo ra các file mẫu trong thư mục resources\views\auth
+- php artisan make:model Company -m
+	-> tạo model và db
+- php artisan make:controller Api/V1/CompaniesController --resource tạp Controller -> sửa code
+- Thêm code vào routers/api.php
+- Chạy lệnh: npm install && npm install vue-router
+- npm run watch or npm run dev: để re compile mỗi khi thay đổi components
+
+/*----------------------------------------------------------------------------------------------------------*/
+** Router: **
+- Thư mục routes/web.php
+- Phương thức
+// Route::get nhận resquest với phương thức GET.
+// Route::post nhận resquest với phương thức POST.
+// Route::put nhận resquest với phương thức PUT.
+// Route::delete nhận resquest với phương thức DELETE.
+// Route::match kết hợp nhiều phương phức như POST,GET,PUT,..
+// Route::any nhận tất cả các phương thức.
+// Route::group tạo ra các nhóm route.
+// Route::controller gọi đến controller tương ứng mà chúng ta tự định.
+// Route::resource sử dụng với resource controller.
+
+Example: 1 số cách thường sử dụng
+	- Route::get('name','controller@method'); ->domain/name
+	- //Truyền dữ liệu qua view
+		Route::get('/general/{ten}', function ($ten) {
+		    return view('general',['ten' => $ten]);
+		});
+	- //Truyền tham số cho router
+		Route::get('a/{name}/{age}','homecontroller@index')->where(['name'=>'[a-zA-Z]+','age'=>'[0-9]+']);
+	- //Group các router
+		Route::group([ ‘prefix’ => ‘MyGroup’ ] , function(){
+			//Gọi Route User1: domain/MyGroup/User1
+			Route::get(‘User1’, function(){ return ‘User1’ });
+			//Gọi Route User2: domain/MyGroup/User2
+			Route::get(‘User2’, function(){ return ‘User2’ });
+			//Gọi Route User3: domain/MyGroup/User3
+			Route::get(‘User3’, function(){ return ‘User3’ });
+		});
+
+/** Controller */
+- Lưu tại thư mục: app/http/Controller
+- Cú pháp tạo bằng artisan: php artisan make:controller [Name]Controller
+- Có thể include 1 số thư viện để sử dụng(Khai báo ở đầu file):
+	EX: use Illuminate\Support\Facades\DB;
+- Return tới 1 view : return view('paginations', ['users' => $users]);
+- 1 số cách thao tác với DB
+	+ Eloquen: tốc độ truy vấn chậm hơn querybuilder
+		use App\City; //include model trước khi sử dụng
+		$city = new City();
+	    $data = $city::all()->toArray();//lấy tất cả record từ table
+
+	    Sử dụng raw query trong Elq:
+	    	// whereRaw
+			$orders = DB::table('orders')
+			    ->whereRaw('price > IF(state = "TX", ?, 100)', [200])
+			    ->get();
+
+			// havingRaw
+			Product::groupBy('category_id')->havingRaw('COUNT(*) > 1')->get();
+
+			// orderByRaw
+			User::where('created_at', '>', '2016-01-01')
+			  ->orderByRaw('(updated_at - created_at) desc')
+			  ->get();
+	+ Query builder: use DB; or use Illuminate\Support\Facades\DB; (thấy tùy phiên bản)
+		- $data = DB::table('city')->get();
+		- Với sql thuần:
+			DB::select('select * from users where id = :id', ['id' => 1]);//tương tự với delete update
+			DB::statement('drop table users');//thực thi 1 câu lệnh
+- Transaction trong laravel
+	DB::beginTransaction();
+	// Bắt đầu các hành động trên CSDL
+
+	...
+	//Gặp lỗi nào đó mới rollback
+	DB::rollBack();
+	...
+
+	//Commit dữ liệu khi hoàn thành kiểm tra
+	DB::commit();
+/*----------------------------------------------------------------------------------------------------------*/
+* 1 số code thủ thuật:
+- Replicate: tạo bản sao cho 1 bản ghi
+
+/*----------------------------------------------------------------------------------------------------------*/
+* 1 số chức năng
+- Eager Loading là kĩ thuật để giải quyết bài toán N+1.
+- Scope trong laravel giúp tái sử dụng các câu truy vấn. Nếu bạn có 1 câu truy vấn thường xuyên sử dụng thì có thể tạo phương thức scope để có thể sử dụng được nhiều lần.
+- Accessors và Mutators cho phép bạn thay đổi lại giá trị các thuộc tính của Eloquent khi lấy ra từ một model hoặc khi set giá trị cho nó. Ví dụ bạn muốn mã hóa dữ liệu trước khi lưu vào database và sau đó là giải mã khi lấy ra.
+- Middleware là phần nằm giữa client và server, xử lý các request/response vào/ra server của client.
+ + Trong laravel có 2 loại Middleware: Before Middleware và After Middleware
+- Chức năng localization của Laravel cung cấp một cách tiện lợi cho việc lấy các chuỗi dữ liệu từ các ngôn ngữ khác nhau, cho phép ứng dụng hỗ trợ đa ngôn ngữ.
+- Authorization Laravel cũng cung cấp Authorization để tổ chức cấp quyền và điều khiển việc truy cập vào tài nguyên.
+- Gates chủ yếu dùng cho việc authorize các action riêng lẻ. Ta sẽ định nghĩa các rule trong method boot của AuthServiceProvider, sử dụng facade Gate.
+Ví dụ: Ta muốn chỉ user là chủ của bài post mới có khả năng sửa bài post đó:
+- Policies Class sẽ định nghĩa các rule liên quan tới 1 model hoặc resource cụ thể nào đó.
+Ví dụ: Tạo 1 PostPolicy tương ứng với model Post để quản lý quyền cơ bản "CRUD" cho user.
+Policies sẽ có độ ưu tiên cao hơn Gate. Khi không tìm được rule phù hợp trong Policices thì laravel mới tìm trong Gate.
+- Collections: xử lý data tốt hơn
+/*----------------------------------------------------------------------------------------------------------*/
+* 1 số lệnh artisan hay dùng:
+- php artisan --version : check version Laravel
