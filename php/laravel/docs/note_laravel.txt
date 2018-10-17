@@ -52,6 +52,16 @@ Example: 1 số cách thường sử dụng
 - Có thể include 1 số thư viện để sử dụng(Khai báo ở đầu file):
 	EX: use Illuminate\Support\Facades\DB;
 - Return tới 1 view : return view('paginations', ['users' => $users]);
+/** Modal */
+- php artisan make:model User -m
+- Bind table vào model qua $table. Nếu ta ko bind table vào model thì mặc định sẽ tự bind đến table {file_name}s
+- 1 số biến trong model:
+	protected $primaryKey = 'uuid'; // xác định khóa chính cho bảng, mặc định là id
+	public $incrementing = false; // bỏ tính năng increment
+	protected $perPage = 25; // mặc định phân trang là 15, bạn có thể tăng giảm tùy ý
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at'; // mặc định created_at, updated_at có thể thay bằng ngay_tao, ngay_cap_nhat
+	public $timestamps = false; // không sử dụng timestamp
 - 1 số cách thao tác với DB
 	+ Eloquen: tốc độ truy vấn chậm hơn querybuilder
 		use App\City; //include model trước khi sử dụng
@@ -71,6 +81,12 @@ Example: 1 số cách thường sử dụng
 			User::where('created_at', '>', '2016-01-01')
 			  ->orderByRaw('(updated_at - created_at) desc')
 			  ->get();
+		- Một số hàm trong eloquen:
+			+ all
+			+ find: $users = User::find([1,2,3]);
+			+ where: $users = User::where('approved', 1)->get();
+				or: $users = User::whereApproved(1)->get();
+			+ save(): thêm và cập nhật model
 	+ Query builder: use DB; or use Illuminate\Support\Facades\DB; (thấy tùy phiên bản)
 		- $data = DB::table('city')->get();
 		- Với sql thuần:
@@ -109,3 +125,63 @@ Policies sẽ có độ ưu tiên cao hơn Gate. Khi không tìm được rule p
 /*----------------------------------------------------------------------------------------------------------*/
 * 1 số lệnh artisan hay dùng:
 - php artisan --version : check version Laravel
+- php artisan make:model User -m : tạo modal với migration
+/*----------------------------------------------------------------------------------------------------------*/
+* 1 số khái niệm về hệ thống
+- Dependency Injection: Nếu một Class A hoạt động phụ thuộc vào một vài Class khác, thì thay vì khởi tạo các instance của các Class kia bên trong Class A, ta sẽ inject những instance đó vào thông qua constructor hay setter. Những instance của các Class mà Class A cần để hoạt động đó được gọi là dependency. Ví dụ:
+	class Monitor {}
+	class Keyboard {}
+	class Computer
+	{
+	    protected $monitor;
+	    protected $keyboard;
+	    public function __construct($monitor, $keyboard)
+	    {
+	        $this->monitor = $monitor;
+	        $this->keyboard = $keyboard;
+	    }
+	}
+
+	$computer = new Computer(new Monitor(), new Keyboard());
+- Inversion of Control: Bình thường thì đoạn xử lý logic của ta sẽ gọi đến những class, library mà nó cần dùng, thế nhưng, với IoC thì ta sẽ gửi cho những đoạn xử lý logic đó những thứ mà nó cần. Hay nói cách khác: Đừng cố gọi khắp nơi để tạo ra những thứ mà bạn cần (dependency), chúng tôi sẽ đưa chúng cho bạn khi chúng tôi cần đến bạn!
+	EX:
+		// With IoC
+		// Đầu tiên, ta đăng ký với IoC Container
+		IoC::register('computer', function() {
+		    $keyboard = new Keyboard();
+		    $monitor = new Monitor();
+		    $computer = new Computer($monitor, $keyboard);
+		    return $computer;
+		});
+
+		// Lấy ra một computer instance với dependency đã được inject
+		$photo = IoC::resolve('computer');
+
+		// Without IoC
+		$keyboard = new Keyboard();
+		$monitor = new Monitor();
+		$computer = new Computer($monitor, $keyboard);
+- Services container:
+	// Binding
+	\App::bind('computer', function() {
+	    $keyboard = new Keyboard();
+	    $monitor = new Monitor();
+	    $computer = new Computer($monitor, $keyboard);
+	    return $computer;
+	}
+
+	// Resolving.
+	\App::make('computer');
+	app('computer');
+	app()->make('computer');
+	app()['computer']
+/*----------------------------------------------------------------------------------------------------------*/
+Một số phương pháp debug:
+- Hàm dd();
+- Log:
+	\Log::debug($lists);
+	\Log::info('Tin nhắn thông báo.');
+	\Log::warning('Tin nhắn cảnh báo.');
+	\Log::error('Thông báo lỗi.');
+	\Log::critical('Thông báo lỗi nghiêm trọng.');
+- Laravel debug bar: composer require barryvdh/laravel-debugbar
