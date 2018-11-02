@@ -1,14 +1,24 @@
+***Một số câu lệnh laravel hữu ích:***
+- php artisan routes : view all routes
+
+
+
+***Migration***
+- php artisan make:migration specs_history_table : tạo migration
+- php artisan migrate : run migrate
+- php artisan migrate reset : xóa table
+
 - Create project: composer create-project laravel/laravel project_name
 - Update lại composer:
-	+ my-laravel-project
-	+ composer self-update
-	+ composer update
+    + my-laravel-project
+    + composer self-update
+    + composer update
 /*----------------------------------------------------------------------------------------------------------*/
 /** Config vue js */
 - php artisan make:auth (để tạo mẫu signup, login, logout.)
-	-> sau khi chạy lệnh sẽ tạo ra các file mẫu trong thư mục resources\views\auth
+    -> sau khi chạy lệnh sẽ tạo ra các file mẫu trong thư mục resources\views\auth
 - php artisan make:model Company -m
-	-> tạo model và db
+    -> tạo model và db
 - php artisan make:controller Api/V1/CompaniesController --resource tạp Controller -> sửa code
 - Thêm code vào routers/api.php
 - Chạy lệnh: npm install && npm install vue-router
@@ -29,80 +39,80 @@
 // Route::resource sử dụng với resource controller.
 
 Example: 1 số cách thường sử dụng
-	- Route::get('name','controller@method'); ->domain/name
-	- //Truyền dữ liệu qua view
-		Route::get('/general/{ten}', function ($ten) {
-		    return view('general',['ten' => $ten]);
-		});
-	- //Truyền tham số cho router
-		Route::get('a/{name}/{age}','homecontroller@index')->where(['name'=>'[a-zA-Z]+','age'=>'[0-9]+']);
-	- //Group các router
-		Route::group([ ‘prefix’ => ‘MyGroup’ ] , function(){
-			//Gọi Route User1: domain/MyGroup/User1
-			Route::get(‘User1’, function(){ return ‘User1’ });
-			//Gọi Route User2: domain/MyGroup/User2
-			Route::get(‘User2’, function(){ return ‘User2’ });
-			//Gọi Route User3: domain/MyGroup/User3
-			Route::get(‘User3’, function(){ return ‘User3’ });
-		});
+    - Route::get('name','controller@method'); ->domain/name
+    - //Truyền dữ liệu qua view
+        Route::get('/general/{ten}', function ($ten) {
+            return view('general',['ten' => $ten]);
+        });
+    - //Truyền tham số cho router
+        Route::get('a/{name}/{age}','homecontroller@index')->where(['name'=>'[a-zA-Z]+','age'=>'[0-9]+']);
+    - //Group các router
+        Route::group([ ‘prefix’ => ‘MyGroup’ ] , function(){
+            //Gọi Route User1: domain/MyGroup/User1
+            Route::get(‘User1’, function(){ return ‘User1’ });
+            //Gọi Route User2: domain/MyGroup/User2
+            Route::get(‘User2’, function(){ return ‘User2’ });
+            //Gọi Route User3: domain/MyGroup/User3
+            Route::get(‘User3’, function(){ return ‘User3’ });
+        });
 
 /** Controller */
 - Lưu tại thư mục: app/http/Controller
 - Cú pháp tạo bằng artisan: php artisan make:controller [Name]Controller
 - Có thể include 1 số thư viện để sử dụng(Khai báo ở đầu file):
-	EX: use Illuminate\Support\Facades\DB;
+    EX: use Illuminate\Support\Facades\DB;
 - Return tới 1 view : return view('paginations', ['users' => $users]);
 /** Modal */
 - php artisan make:model User -m
 - Bind table vào model qua $table. Nếu ta ko bind table vào model thì mặc định sẽ tự bind đến table {file_name}s
 - 1 số biến trong model:
-	protected $primaryKey = 'uuid'; // xác định khóa chính cho bảng, mặc định là id
-	public $incrementing = false; // bỏ tính năng increment
-	protected $perPage = 25; // mặc định phân trang là 15, bạn có thể tăng giảm tùy ý
-	const CREATED_AT = 'created_at';
-	const UPDATED_AT = 'updated_at'; // mặc định created_at, updated_at có thể thay bằng ngay_tao, ngay_cap_nhat
-	public $timestamps = false; // không sử dụng timestamp
+    protected $primaryKey = 'uuid'; // xác định khóa chính cho bảng, mặc định là id
+    public $incrementing = false; // bỏ tính năng increment
+    protected $perPage = 25; // mặc định phân trang là 15, bạn có thể tăng giảm tùy ý
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at'; // mặc định created_at, updated_at có thể thay bằng ngay_tao, ngay_cap_nhat
+    public $timestamps = false; // không sử dụng timestamp
 - 1 số cách thao tác với DB
-	+ Eloquen: tốc độ truy vấn chậm hơn querybuilder
-		use App\City; //include model trước khi sử dụng
-		$city = new City();
-	    $data = $city::all()->toArray();//lấy tất cả record từ table
+    + Eloquen: tốc độ truy vấn chậm hơn querybuilder
+        use App\City; //include model trước khi sử dụng
+        $city = new City();
+        $data = $city::all()->toArray();//lấy tất cả record từ table
 
-	    Sử dụng raw query trong Elq:
-	    	// whereRaw
-			$orders = DB::table('orders')
-			    ->whereRaw('price > IF(state = "TX", ?, 100)', [200])
-			    ->get();
+        Sử dụng raw query trong Elq:
+            // whereRaw
+            $orders = DB::table('orders')
+                ->whereRaw('price > IF(state = "TX", ?, 100)', [200])
+                ->get();
 
-			// havingRaw
-			Product::groupBy('category_id')->havingRaw('COUNT(*) > 1')->get();
+            // havingRaw
+            Product::groupBy('category_id')->havingRaw('COUNT(*) > 1')->get();
 
-			// orderByRaw
-			User::where('created_at', '>', '2016-01-01')
-			  ->orderByRaw('(updated_at - created_at) desc')
-			  ->get();
-		- Một số hàm trong eloquen:
-			+ all
-			+ find: $users = User::find([1,2,3]);
-			+ where: $users = User::where('approved', 1)->get();
-				or: $users = User::whereApproved(1)->get();
-			+ save(): thêm và cập nhật model
-	+ Query builder: use DB; or use Illuminate\Support\Facades\DB; (thấy tùy phiên bản)
-		- $data = DB::table('city')->get();
-		- Với sql thuần:
-			DB::select('select * from users where id = :id', ['id' => 1]);//tương tự với delete update
-			DB::statement('drop table users');//thực thi 1 câu lệnh
+            // orderByRaw
+            User::where('created_at', '>', '2016-01-01')
+              ->orderByRaw('(updated_at - created_at) desc')
+              ->get();
+        - Một số hàm trong eloquen:
+            + all
+            + find: $users = User::find([1,2,3]);
+            + where: $users = User::where('approved', 1)->get();
+                or: $users = User::whereApproved(1)->get();
+            + save(): thêm và cập nhật model
+    + Query builder: use DB; or use Illuminate\Support\Facades\DB; (thấy tùy phiên bản)
+        - $data = DB::table('city')->get();
+        - Với sql thuần:
+            DB::select('select * from users where id = :id', ['id' => 1]);//tương tự với delete update
+            DB::statement('drop table users');//thực thi 1 câu lệnh
 - Transaction trong laravel
-	DB::beginTransaction();
-	// Bắt đầu các hành động trên CSDL
+    DB::beginTransaction();
+    // Bắt đầu các hành động trên CSDL
 
-	...
-	//Gặp lỗi nào đó mới rollback
-	DB::rollBack();
-	...
+    ...
+    //Gặp lỗi nào đó mới rollback
+    DB::rollBack();
+    ...
 
-	//Commit dữ liệu khi hoàn thành kiểm tra
-	DB::commit();
+    //Commit dữ liệu khi hoàn thành kiểm tra
+    DB::commit();
 /*----------------------------------------------------------------------------------------------------------*/
 * 1 số code thủ thuật:
 - Replicate: tạo bản sao cho 1 bản ghi
@@ -129,59 +139,173 @@ Policies sẽ có độ ưu tiên cao hơn Gate. Khi không tìm được rule p
 /*----------------------------------------------------------------------------------------------------------*/
 * 1 số khái niệm về hệ thống
 - Dependency Injection: Nếu một Class A hoạt động phụ thuộc vào một vài Class khác, thì thay vì khởi tạo các instance của các Class kia bên trong Class A, ta sẽ inject những instance đó vào thông qua constructor hay setter. Những instance của các Class mà Class A cần để hoạt động đó được gọi là dependency. Ví dụ:
-	class Monitor {}
-	class Keyboard {}
-	class Computer
-	{
-	    protected $monitor;
-	    protected $keyboard;
-	    public function __construct($monitor, $keyboard)
-	    {
-	        $this->monitor = $monitor;
-	        $this->keyboard = $keyboard;
-	    }
-	}
+    class Monitor {}
+    class Keyboard {}
+    class Computer
+    {
+        protected $monitor;
+        protected $keyboard;
+        public function __construct($monitor, $keyboard)
+        {
+            $this->monitor = $monitor;
+            $this->keyboard = $keyboard;
+        }
+    }
 
-	$computer = new Computer(new Monitor(), new Keyboard());
+    $computer = new Computer(new Monitor(), new Keyboard());
 - Inversion of Control: Bình thường thì đoạn xử lý logic của ta sẽ gọi đến những class, library mà nó cần dùng, thế nhưng, với IoC thì ta sẽ gửi cho những đoạn xử lý logic đó những thứ mà nó cần. Hay nói cách khác: Đừng cố gọi khắp nơi để tạo ra những thứ mà bạn cần (dependency), chúng tôi sẽ đưa chúng cho bạn khi chúng tôi cần đến bạn!
-	EX:
-		// With IoC
-		// Đầu tiên, ta đăng ký với IoC Container
-		IoC::register('computer', function() {
-		    $keyboard = new Keyboard();
-		    $monitor = new Monitor();
-		    $computer = new Computer($monitor, $keyboard);
-		    return $computer;
-		});
+    EX:
+        // With IoC
+        // Đầu tiên, ta đăng ký với IoC Container
+        IoC::register('computer', function() {
+            $keyboard = new Keyboard();
+            $monitor = new Monitor();
+            $computer = new Computer($monitor, $keyboard);
+            return $computer;
+        });
 
-		// Lấy ra một computer instance với dependency đã được inject
-		$photo = IoC::resolve('computer');
+        // Lấy ra một computer instance với dependency đã được inject
+        $photo = IoC::resolve('computer');
 
-		// Without IoC
-		$keyboard = new Keyboard();
-		$monitor = new Monitor();
-		$computer = new Computer($monitor, $keyboard);
+        // Without IoC
+        $keyboard = new Keyboard();
+        $monitor = new Monitor();
+        $computer = new Computer($monitor, $keyboard);
 - Services container:
-	// Binding
-	\App::bind('computer', function() {
-	    $keyboard = new Keyboard();
-	    $monitor = new Monitor();
-	    $computer = new Computer($monitor, $keyboard);
-	    return $computer;
-	}
+    // Binding
+    \App::bind('computer', function() {
+        $keyboard = new Keyboard();
+        $monitor = new Monitor();
+        $computer = new Computer($monitor, $keyboard);
+        return $computer;
+    }
 
-	// Resolving.
-	\App::make('computer');
-	app('computer');
-	app()->make('computer');
-	app()['computer']
+    // Resolving.
+    \App::make('computer');
+    app('computer');
+    app()->make('computer');
+    app()['computer']
 /*----------------------------------------------------------------------------------------------------------*/
 Một số phương pháp debug:
 - Hàm dd();
 - Log:
-	\Log::debug($lists);
-	\Log::info('Tin nhắn thông báo.');
-	\Log::warning('Tin nhắn cảnh báo.');
-	\Log::error('Thông báo lỗi.');
-	\Log::critical('Thông báo lỗi nghiêm trọng.');
+    \Log::debug($lists);
+    \Log::info('Tin nhắn thông báo.');
+    \Log::warning('Tin nhắn cảnh báo.');
+    \Log::error('Thông báo lỗi.');
+    \Log::critical('Thông báo lỗi nghiêm trọng.');
 - Laravel debug bar: composer require barryvdh/laravel-debugbar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------*/
+@extends('layout')
+@section('title') Hello day la title @endsection
+
+@section('content')
+
+    Cài đặt laravel:
+    - nên cài đặt github sẽ có công cụ chạy terminal sẵn luôn
+    - cài đặt composer : chạy file setup <br>
+    - cài đặt php artisan : composer install<br>
+    - chạy lệnh bên dưới để cài đặt project: <br>
+        cd C://<br>
+        cd xampp/htdocs<br>
+        composer create-project --prefer-dist laravel/laravel first_project "5.4.*"<br>
+--------------------------------------------------------------------------<br>
+    - cấu hình: database trong config/database.php nếu local thì sử dụng file. env ở root <br>
+    - Controllers nằm trong thư mục app/http/controllers <br>
+    - Model trong file app <br>
+    - View nằm trong thư mục resources/views<br>
+    - Router nằm trong thư mục routes/web.php (xem file web.php để sử dụng routes) <br>
+--------------------------------------------------------------
+<i><br><b>Cách sử dụng blade template </b></i> <br>
+
+    - cú pháp kế thừa 1 template đã được định sẵn @ extends('layout') : layout là file template đã tạo layout.blade.php <br>
+    - ta dùng cú pháp @ section('bien da dinh truoc') and @ endsection, @ yield để thay đổi nội dung động trong file layout<br>
+
+    <br>
+    - sử dụng cú pháp @{{ $biến }} để thay cho echo <br>
+    - nếu thêm dấu @ trước @{{ }} thì sẽ show dạng raw test vd @{{ $biến }} <br>
+    - có thể set giá trị mặc địch cho echo vd: @{{ $ten or 'Ten' }} nếu có $tên thì show $ten ngược lại là Ten vd:<br>
+    @{{ $name or 'Default' }} tương đương @{{ isset($name) ? $name : 'Default' }}
+
+    {{ $post->author->name ?? '' }}
+    <br><br>
+
+    vd:((view source code để hiểu chi tiết)) <br>
+    <?php
+        $str  = '<i>{!!$str!!} dấu !! sẽ echo ra raw text</i>';
+        $str1 = '<b>{{$str}} in giá trị của biến</b>';
+    ?>
+    {!!$str!!}
+    </br>
+    {{$str1}}
+    <br>
+---------------------------------------------------------------
+<br>
+Tạo model <br>
+$ php artisan make:model Task -mr <br>
+
+---------------------------------------------------------------
+<br>
+Create database: (view source)<br>
+<template>
+$ mysql -uroot -p
+MySQL [(none)]> create database laravue;
+Query OK, 1 row affected (0.04 sec)
+MySQL [(none)]> Ctrl-C -- exit!
+<template>
+
+
+<br>
+---------------------------------------------------------------
+@endsection
+
+Log in laravel
+Log::info( PHP_EOL . '- Start check data page :'. $this->current_page);
+Log::emergency($message);
+Log::alert($message);
+Log::critical($message);
+Log::error($message);
+Log::warning($message);
+Log::notice($message);
+Log::info($message);
+Log::debug($message);
+
+
+-----------------------------------------------------------------
+get prefix router on middleware
+// $prefix = $request->route()->getPrefix();
+// $prefix = str_replace('/', '', $prefix);
+
+
+-----------------------------------------------------
+Insert return list id
+$sql = "
+    INSERT INTO users (name, email, user_id, password)
+    SELECT name, email, user_id, password
+    FROM   users
+    WHERE  id IN (1,3)
+    returning id
+    ;
+";
+$return = DB::select($sql);
+echo '<pre>';
+var_dump( $return );
+echo '</pre>';
+die;
