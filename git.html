@@ -81,3 +81,14 @@ $ git update-index --assume-unchanged <file>
 $ rm <file>
 $ git status
 # On branch master
+
+//xoa khoi danh sach
+git update-index --no-assume-unchanged [file]
+git update-index --really-refresh (Xóa toàn bộ)
+//Xem danh sách các file đã được thêm:
+git ls-files -v|grep '^h'
+//Ngoài ra ở mức độ cao hơn bạn có thể sử dụng:
+git update-index --skip-worktree [file]
+
+//git update-index thu muc
+git ls-files | tr '\n' ' ' | xargs git update-index --assume-unchanged
