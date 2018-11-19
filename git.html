@@ -61,6 +61,8 @@ git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
 clone souce từ git
 git clone [url
 
+
+
 //ignore commited file--------------------------------------------
 $ echo debug.log >> .gitignore
 $ git rm --cached debug.log
@@ -72,3 +74,10 @@ $ cat .gitignore
 *.log
 $ git add -f debug.log
 $ git commit -m "Force adding debug.log"
+
+
+//ko commit file ko mong muon
+$ git update-index --assume-unchanged <file>
+$ rm <file>
+$ git status
+# On branch master
