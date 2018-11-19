@@ -59,4 +59,16 @@ git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
 Để đồng bộ hóa các thay đổi, bạn chạy lệnh: git fetch origin
 
 clone souce từ git
-git clone [url]
+git clone [url
+
+//ignore commited file--------------------------------------------
+$ echo debug.log >> .gitignore
+$ git rm --cached debug.log
+rm 'debug.log'
+$ git commit -m "Start ignoring debug.log"
+
+//commit ignore file----------------------------------------------
+$ cat .gitignore
+*.log
+$ git add -f debug.log
+$ git commit -m "Force adding debug.log"
